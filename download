@@ -1,0 +1,20 @@
+# Operating system junk
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Secrets: never commit passwords or API keys
+.env
+.env.*
+!.env.example
+
+# Logs and installed packages (for later, if you add a backend)
+*.log
+node_modules/
+
+# Build output (for later)
+dist/
+build/
