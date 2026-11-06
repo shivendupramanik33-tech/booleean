@@ -14,11 +14,11 @@ section{background:#fff;border:3px solid var(--k);border-left-width:12px;border-
 <button class="btn" id="go">SIGN IN</button> <button class="btn" id="fp" type="button" style="background:#fff">FORGOT PASSWORD</button></form>
 <div id="me" hidden><p>Signed in as <b id="em"></b></p><h2 style="font-size:22px;margin:14px 0 6px">Your orders</h2><ul id="ol" style="padding-left:20px"></ul><p style="margin-top:14px"><button class="btn" id="so">SIGN OUT</button></p></div>
 <p id="m" class="note" hidden></p><p style="margin-top:24px"><a href="index.html">← Back to the store</a></p></main>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.3/dist/umd/supabase.js"></script>
 <script>
-const CONFIG={SUPABASE_URL:"",SUPABASE_ANON_KEY:"" /* anon key only. Never the service_role key. */};
+const CONFIG={SUPABASE_URL:"https://ttaqayskweukbkvxoqds.supabase.co",SUPABASE_ANON_KEY:"sb_publishable_UEfCsepDNdjpgx5TDd-9ew_soricS9Y" /* anon key only. Never the service_role key. */};
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])),msg=t=>{$("#m").hidden=false;$("#m").textContent=t};
-const sb=CONFIG.SUPABASE_URL?supabase.createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_ANON_KEY):null;let up=false;
+const sb=CONFIG.SUPABASE_ANON_KEY?supabase.createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_ANON_KEY):null;let up=false;
 if(!sb)msg("Login isn’t connected to a database yet, so nothing can be saved.");
 const tab=u=>{up=u;$("#t1").classList.toggle("on",!u);$("#t2").classList.toggle("on",u);$("#go").textContent=u?"CREATE ACCOUNT":"SIGN IN";$("#p").autocomplete=u?"new-password":"current-password"};
 $("#t1").onclick=()=>tab(false);$("#t2").onclick=()=>tab(true);
