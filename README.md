@@ -36,6 +36,7 @@ Keep the `CNAME` file in the repository root if you use a custom domain. Never p
 |------|------------|
 | `index.html` | The whole website (logo is embedded inside) |
 | `terms.html` | Terms, shipping, refund and privacy page (draft) |
+| `confirmed.html` | Page customers land on after clicking the email confirmation link |
 | `login.html` | Customer sign-in and order list (needs Supabase config) |
 | `README.md` | This page |
 | `.gitignore` | Tells git which files to never upload |
