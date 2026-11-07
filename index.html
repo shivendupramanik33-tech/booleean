@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BOOLEEAN — The internet’s most unnecessary store</title>
-<meta name="description" content="Emotional support rocks, fake legal documents and other things nobody needs. BOOLEEAN is the internet’s most unnecessary store.">
+<meta name="description" content="Emotional support rocks, joke certificates and other things nobody needs. BOOLEEAN is the internet’s most unnecessary store.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
@@ -81,6 +81,9 @@ summary{list-style:none;display:flex;justify-content:space-between;gap:12px}summ
 .tm{background:#fff8e7}.tm .w{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}.tm h2,.tm .note{grid-column:1/-1}.tm details{margin:0;border-left-width:12px}.tm details:nth-of-type(3n+1){border-left-color:var(--b)}.tm details:nth-of-type(3n+2){border-left-color:#ff5cae}.tm details:nth-of-type(3n){border-left-color:var(--y)}
 @media(max-width:700px){.tm .w{grid-template-columns:1fr}}
 nav a.lb{background:#fff;color:var(--k);border-radius:999px;padding:6px 14px}
+
+.trust{padding:32px 0}.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.tg>div{background:#fff;border:3px solid var(--k);border-radius:16px;padding:14px 16px}.tg b{font-family:'Bowlby One',sans-serif;font-weight:400;display:block;margin-bottom:4px}.tg p{font-size:15px}
+.fcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin:20px 0}.fcols b{display:block;margin-bottom:6px;font-family:'Bowlby One',sans-serif;font-weight:400}.fcols a{display:block;margin:4px 0}
 </style></head><body>
 <div id="load" role="status"><div><img data-logo alt="BOOLEEAN" style="width:min(320px,70vw)"><p id="lt">Convincing the rock to show up…</p></div></div>
 <nav><div class="w"><a class="lg" href="#" aria-label="BOOLEEAN home"><img data-logo alt="BOOLEEAN"></a><a class="l" href="#shop">Nonsense</a><a class="l" href="#reviews">Regrets</a><a class="l" href="#faq">FAQ</a><a class="lb" href="login.html">Login</a><button id="cb" aria-label="Open cart">Cart (<span id="cn">0</span>)</button></div></nav>
@@ -104,19 +107,21 @@ nav a.lb{background:#fff;color:var(--k);border-radius:999px;padding:6px 14px}
 <div class="mq" aria-hidden="true"><div id="mq"></div></div>
 
 <section id="shop"><div class="w"><h2>The flea market of bad ideas</h2>
-<p class="sub">One physical rock. Five digital things. Every price is real, every claim is mostly true.</p>
+<p class="sub">One physical rock. Five digital things. Every price is real, every claim is mostly true. Certificates, passes and treaties are joke novelty items, not official or legal documents.</p>
 <div class="grid" id="grid"></div></div></section>
 
+<section class="trust" aria-label="Store promises"><div class="w"><div class="tg"><div><b>Clear shipping</b><p>₹39 flat for the rock, free for digital items. India only. <a href="shipping-policy.html">Details</a></p></div><div><b>Fair returns</b><p>Damaged or wrong item? We replace it. <a href="refund-policy.html">Refund policy</a></p></div><div><b>Real support</b><p>Email replies within 48 hours.</p></div><div><b>Secure payments</b><p>UPI, cards and netbanking through Razorpay. We never see your card details.</p></div></div></div></section>
+
 <section class="dark" id="why"><div class="w"><h2>Why BOOLEEAN exists</h2>
-<p style="max-width:60ch">We asked ourselves the same question, then bought a domain. The jokes are loud. The checkout is not: clear prices, clear policies, real support at <a href="mailto:booleean.shop@gmail.com">booleean.shop@gmail.com</a>.</p></div></section>
+<p style="max-width:60ch">We asked ourselves the same question, then bought a domain. The jokes are loud. The checkout is not: clear prices, clear policies, real support at <a href="mailto:booleean.shop@gmail.com">booleean.shop@gmail.com</a>. <a href="about.html">More about us</a>.</p></div></section>
 
 <section id="reviews" class="rvs"><div class="w"><h2>Real reviews. Questionable life decisions.</h2>
-<p class="sub">Reviews from verified buyers will appear here after moderation. Until then, the three below are <b>demo content</b>, written by us, not customers.</p>
+<p class="sub">Reviews from verified buyers will appear here after moderation. No reviews yet.</p>
 <div class="grid" id="rvl"></div>
 <h3 style="margin:36px 0 10px;font-size:24px">Regret something? Say so.</h3>
 <form id="rf" class="rform" style="max-width:540px"><label for="rp">Which regret are you reviewing?</label><select id="rp"></select>
 <label for="ro">Order ID</label><input id="ro" required maxlength="40" placeholder="The order ID you were given at purchase">
-<fieldset><legend>How badly did we ruin your week?</legend><div class="stars" id="st"></div></fieldset>
+<fieldset><legend>Rock your rating <small>(1★ = total regret · 5★ = rock solid)</small></legend><div class="stars" id="st"></div></fieldset>
 <label for="rt">Your review</label><textarea id="rt" required maxlength="500" rows="3" placeholder="Be honest. The rock can take it."></textarea>
 <button class="btn b">SEND MY REGRETS</button><p id="rm" class="note" style="margin-top:12px" hidden></p></form></div></section>
 
@@ -124,42 +129,31 @@ nav a.lb{background:#fff;color:var(--k);border-radius:999px;padding:6px 14px}
 <details><summary>Why does BOOLEEAN exist?</summary><p>We asked ourselves the same question. Then we bought a domain.</p></details>
 <details><summary>Is the Emotional Support Rock actually useful?</summary><p>Emotionally? That’s between you and the rock.</p></details>
 <details><summary>Does the rock talk?</summary><p>No. We’ve had several meetings about this.</p></details>
-<details><summary>Can I return my rock?</summary><p>Please consult the rock first. It has feelings. Probably. Actual return terms are in the Refund Policy below.</p></details>
+<details><summary>Can I return my rock?</summary><p>Please consult the rock first. It has feelings. Probably. Actual return terms are in the <a href="refund-policy.html">Refund &amp; Cancellation Policy</a>.</p></details>
 <details><summary>Are your digital products delivered physically?</summary><p>No. We haven’t invented downloadable cardboard yet. They are delivered electronically within 24 hours of payment being confirmed.</p></details>
 <details><summary>Is this a serious business?</summary><p>Our accountant has requested that we stop answering this question.</p></details>
 <details><summary>Why is shipping charged only for the rock?</summary><p>Because PDFs don’t have weight, only guilt.</p></details>
 <details><summary>I paid and got nothing. Now what?</summary><p>Check spam, then email booleean.shop@gmail.com with your order details. We’ll sort it out.</p></details></div></section>
 
-<section id="terms" class="tm"><div class="w"><h2>Terms &amp; conditions (legally boring, emotionally entertaining)</h2>
-<p class="note" style="margin-bottom:18px">Draft for you to review. It has not been checked by a lawyer. Edit the bracketed parts to match what you actually do before taking real orders.</p>
-<details><summary>1. Acceptance of nonsense</summary><p>By using BOOLEEAN you acknowledge that you’ve voluntarily entered a digital establishment where common sense is occasionally on vacation.</p></details>
-<details><summary>2. Product expectations</summary><p>Our products are real. Their usefulness is a philosophical debate. The Emotional Support Rock is not a licensed therapist, financial advisor or relationship expert.</p></details>
-<details><summary>3. Digital delivery</summary><p>Digital products are delivered electronically to the email you give at checkout, within 24 hours of payment being confirmed. Check spam before accusing the internet of theft.</p></details>
-<details><summary>4. Shipping (rock only)</summary><p>Shipping within India is ₹39 flat, with delivery in 5–7 days. Provide a complete address; we can’t deliver to “near the big tree”.</p></details>
-<details><summary>5. Refunds, cancellations and returns</summary><p>Digital products can’t be refunded once delivered, because we can’t take a PDF back. If a file is broken, missing or not what we described, email booleean.shop@gmail.com and we’ll fix it. The Emotional Support Rock is not refundable. If it arrives damaged or is the wrong item, email booleean.shop@gmail.com with a photo of what you received within 5 days of delivery and we’ll send a replacement. Humour does not override consumer rights.</p></details>
-<details><summary>6. Privacy</summary><p>We collect your name, email, address (rock only) and order details to fulfil orders and answer support. Payments are handled by Razorpay; we never see your card or UPI details. We don’t sell your data. [Add retention and deletion details.]</p></details>
-<details><summary>7. Intellectual property</summary><p>Please don’t steal our nonsense. We worked very hard to make it look like we didn’t work hard.</p></details>
-<details><summary>8. Contact</summary><p>booleean.shop@gmail.com</p></details></div></section>
-
 <footer><div class="w"><img data-logo alt="BOOLEEAN" style="width:min(380px,80%);display:block;margin-bottom:10px"><p style="font-weight:700;margin:6px 0">The internet’s most unnecessary store.</p>
 <p style="max-width:60ch;margin-bottom:18px">Thanks for wasting your time here. We hope you spent money responsibly. We certainly didn’t.</p>
-<p><a href="#shop">Shop</a><a href="#why">About</a><a href="#faq">FAQ</a><a href="mailto:booleean.shop@gmail.com">Contact</a><a href="terms.html">Terms &amp; Conditions</a><a href="terms.html#privacy">Privacy</a><a href="terms.html#refunds">Refunds</a></p>
-<p style="margin-top:22px;font-size:14px">© BOOLEEAN. All rights reserved. Even the unnecessary ones.</p></div></footer>
+<div class="fcols"><div><b>Company</b><a href="about.html">About BOOLEEAN</a><a href="terms.html">Terms &amp; Conditions</a><a href="privacy-policy.html">Privacy Policy</a><a href="refund-policy.html">Refund &amp; Cancellation</a><a href="shipping-policy.html">Shipping &amp; Delivery</a></div><div><b>Help</b><a href="contact.html">Contact Us</a><a href="#faq">FAQ</a><a href="login.html">Login</a><a href="#shop">Shop</a></div><div><b>Contact</b><a href="mailto:booleean.shop@gmail.com">booleean.shop@gmail.com</a><a href="tel:+917908801750">+91 7908801750</a><span>Malda, West Bengal, India</span></div></div>
+<p style="margin-top:22px;font-size:14px">Secure payments. © BOOLEEAN. All rights reserved. Even the unnecessary ones.</p></div></footer>
 
 <dialog id="dlg"></dialog>
 <aside id="drawer" aria-label="Cart"><button class="x" id="cx" aria-label="Close cart">×</button><h3 style="font-size:28px">Your questionable cart</h3><div id="ci"></div><div id="ct"></div>
-<button class="btn b" id="co">CHECKOUT</button><p id="cm" class="note" hidden></p></aside>
+<button class="btn b" id="co">CHECKOUT</button><p class="note" style="margin-top:10px;font-size:13px">By paying you agree to our <a href="terms.html">Terms</a>, <a href="refund-policy.html">Refund &amp; Cancellation Policy</a>, <a href="shipping-policy.html">Shipping Policy</a> and <a href="privacy-policy.html">Privacy Policy</a>, and to sharing the details needed with our payment partner.</p><p id="cm" class="note" hidden></p></aside>
 
 <script>
-/* ===== CONFIG: fill these in. The anon key is public by design; NEVER put a service-role or Razorpay secret key here. ===== */
-const CONFIG={SUPABASE_URL:"https://ttaqayskweukbkvxoqds.supabase.co",SUPABASE_ANON_KEY:"sb_publishable_UEfCsepDNdjpgx5TDd-9ew_soricS9Y",CHECKOUT_URL:"" /* your server endpoint that re-prices the cart and creates the Razorpay order */,SHIPPING:39};
+/* ===== CONFIG: fill these in. The anon key is public by design; NEVER put a service-role or payment secret key here. ===== */
+const CONFIG={SUPABASE_URL:"https://ttaqayskweukbkvxoqds.supabase.co",SUPABASE_ANON_KEY:"sb_publishable_UEfCsepDNdjpgx5TDd-9ew_soricS9Y",CHECKOUT_URL:"" /* your server endpoint that re-prices the cart and creates the payment order */,SHIPPING:39};
 const P=[
 {id:"rock",n:"Emotional Support Rock",t:"Physical",pr:149,d:"Doesn’t judge you. Doesn’t interrupt you. Doesn’t leave you on read. Doesn’t pay rent either.",inc:["One (1) rock","Zero qualifications"],dl:"Shipped to your address in 5–7 days. ₹39 shipping is added at checkout.",cta:"ADOPT YOUR ROCK"},
-{id:"overthinker",n:"Certified Overthinker Pack",t:"Digital",pr:49,d:"Printable certificates, awards and badges for friends who replay a 2019 conversation at 3 AM.",inc:["Printable certificates","Awards and badges (PDF)"],dl:"Emailed as a download within 24 hours of payment being confirmed.",cta:"CERTIFY MY NONSENSE",f:"Who’s this overthinker, btw?",ph:"Their name, as it should appear on the certificate"},
-{id:"manual",n:"99 Stupidly Funny Things to Sell Online",t:"Digital",pr:99,d:"An original mini-book of absurd product ideas, funny names, descriptions and ways to test them cheaply. Serious business guide, unserious business.",inc:["eBook (PDF)","99 ideas","Cheap ways to test them"],dl:"Emailed as a download within 24 hours of payment being confirmed.",cta:"BUY THE NONSENSE MANUAL"},
-{id:"treaty",n:"Group Chat Peace Treaty",t:"Digital",pr:39,d:"A printable binding agreement for resolving who left whom on read. Binding in no court.",inc:["Printable treaty (PDF)","Signature lines for everyone involved"],dl:"Emailed as a download within 24 hours of payment being confirmed.",cta:"RESTORE WORLD PEACE",f:"What’s your group chat called?",ph:"Group name"},
-{id:"permit",n:"Desk Rock Parking Permit",t:"Digital",pr:79,d:"A fake official award with a custom name and a gentle insult, made to be forwarded immediately.",inc:["Personalised permit (PDF)"],dl:"Made from your details, then emailed within 24 hours of payment being confirmed.",cta:"ISSUE THE PERMIT",f:"Name on the permit",ph:"Whom is this parking permit for?"},
-{id:"roast",n:"Personalised Roast Certificate",t:"Digital",pr:59,d:"A tiny personalised award for someone who deserves recognition for absolutely questionable achievements.",inc:["Personalised certificate (PDF)"],dl:"Made from your details, then emailed within 24 hours of payment being confirmed.",cta:"ROAST SOMEONE",f:"Recipient’s name",ph:"Whom should we issue this certificate to?",f2:"Their questionable achievement"}];
+{id:"overthinker",n:"Certified Overthinker Pack",t:"Digital",pr:49,d:"Printable certificates, awards and badges for friends who replay a 2019 conversation at 3 AM. Joke novelty items, not official documents.",inc:["Printable certificates","Awards and badges (PDF)"],dl:"Emailed as a download within 24 hours of payment being confirmed.",cta:"CERTIFY MY NONSENSE",f:"Who’s this overthinker, btw?",ph:"Their name, as it should appear on the certificate"},
+{id:"manual",n:"99 Stupidly Funny Things to Sell Online",t:"Digital",pr:99,d:"An original mini-book of absurd product ideas, funny names, descriptions and ways to test them cheaply. Just for fun and inspiration. No income is promised.",inc:["eBook (PDF)","99 ideas","Cheap ways to test them"],dl:"Emailed as a download within 24 hours of payment being confirmed.",cta:"BUY THE NONSENSE MANUAL"},
+{id:"treaty",n:"Group Chat Peace Treaty",t:"Digital",pr:39,d:"A printable binding agreement for resolving who left whom on read. Binding in no court. A novelty item, just for fun.",inc:["Printable treaty (PDF)","Signature lines for everyone involved"],dl:"Emailed as a download within 24 hours of payment being confirmed.",cta:"RESTORE WORLD PEACE",f:"What’s your group chat called?",ph:"Group name"},
+{id:"permit",n:"Desk Rock Parking Pass (Novelty)",t:"Digital",pr:79,d:"A joke novelty award with a custom name and a gentle insult, made to be forwarded immediately. Not an official document.",inc:["Personalised parking pass (PDF)"],dl:"Made from your details, then emailed within 24 hours of payment being confirmed.",cta:"GET THE PASS",f:"Name on the pass",ph:"Whom is this parking pass for?"},
+{id:"roast",n:"Personalised Roast Certificate",t:"Digital",pr:59,d:"A tiny personalised award for someone who deserves recognition for absolutely questionable achievements. A novelty item, nothing official.",inc:["Personalised certificate (PDF)"],dl:"Made from your details, then emailed within 24 hours of payment being confirmed.",cta:"ROAST SOMEONE",f:"Recipient’s name",ph:"Whom should we issue this certificate to?",f2:"Their questionable achievement"}];
 const $=s=>document.querySelector(s),E=(s,h)=>{$(s).innerHTML=h},esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let cart=[];try{cart=JSON.parse(localStorage.getItem("bl")||"[]")}catch(e){}
 const save=()=>{try{localStorage.setItem("bl",JSON.stringify(cart))}catch(e){}};
@@ -168,7 +162,7 @@ const LOGO="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcwAAADxCAMAAABxlndzAA
 // loader
 const L=["Convincing the rock to show up…","Polishing things nobody asked for…","Consulting the accountant (he declined)…"];let li=0;const lt=setInterval(()=>{$("#lt").textContent=L[++li%3]},600);
 addEventListener("load",()=>setTimeout(()=>{$("#load").style.opacity=0;setTimeout(()=>$("#load").remove(),500);clearInterval(lt)},1200));
-E("#mq",("EMOTIONAL SUPPORT ROCKS ★ FAKE LEGAL DOCUMENTS ★ NO REFUNDS ON FEELINGS (SEE POLICY) ★ ABSOLUTELY UNNECESSARY ★ ").repeat(8));
+E("#mq",("EMOTIONAL SUPPORT ROCKS ★ JOKE CERTIFICATES ★ NO REFUNDS ON FEELINGS (SEE POLICY) ★ ABSOLUTELY UNNECESSARY ★ ").repeat(8));
 // products
 const BG={rock:"#E6FF00",overthinker:"#C9B8FF",manual:"#FF5CAA",treaty:"#9fe8ff",permit:"#E6FF00",roast:"#ffb199"};
 const doc=(t,u,c)=>`<svg viewBox="0 0 160 110"><rect x="30" y="8" width="100" height="94" rx="6" fill="#fff8e7" stroke="#0a0a0a" stroke-width="4"/><rect x="40" y="18" width="80" height="8" rx="3" fill="${c}"/><text x="80" y="50" text-anchor="middle" font-family="Bowlby One" font-size="14">${t}</text><text x="80" y="66" text-anchor="middle" font-size="9" font-family="Space Grotesk" font-weight="700">${u}</text><path d="M46 88h34M92 88h20" stroke="#0a0a0a" stroke-width="3"/><circle cx="124" cy="92" r="12" fill="${c}" stroke="#0a0a0a" stroke-width="3"/></svg>`;
@@ -185,8 +179,8 @@ const add=()=>{const a=$("#f1"),b=$("#f2");if((a&&!a.value.trim())||(b&&!b.value
 cart.push({id,c:[a&&a.value.trim(),b&&b.value.trim()].filter(Boolean)});save();draw();return true};
 const done=()=>{if(add()){if(id=="rock"&&!cart.some(c=>c.id=="permit"))up();else{dlg.close();$("#drawer").classList.add("o")}}};$("#ad").onclick=done;$("#bn").onclick=done}
 document.addEventListener("click",e=>{const o=e.target.closest("[data-o]");if(o){e.preventDefault();open(o.dataset.o)}});
-function up(){const p=P.find(x=>x.id=="permit");dlg.innerHTML=`<button class="x" aria-label="Close" onclick="dlg.close();$('#drawer').classList.add('o')">×</button><span class="tag">Rock added to cart ✓</span><h3>Your rock needs somewhere to park</h3><div class="art" style="background:${BG.permit}" aria-hidden="true">${art("permit")}</div><p>The <b>Desk Rock Parking Permit</b> is a fake official parking license for your rock: a printable certificate (PDF) with a name on it, saying your rock is allowed to sit on your desk. It’s a joke, not a real permit. ${rs(p.pr)}, digital.</p><label for="uf">What’s your rock called?</label><input id="uf" maxlength="60" placeholder="Name to print on the permit"><p id="ue" class="note" hidden></p><button class="btn" id="ua">YES, PERMIT MY ROCK</button> <button class="btn w2" id="un">NO, LET IT RISK A TICKET</button>`;
-$("#ua").onclick=()=>{const v=$("#uf").value.trim();if(!v){$("#ue").hidden=false;$("#ue").textContent="Give the rock a name first. Parking permits need names.";return}cart.push({id:"permit",c:[v]});save();draw();dlg.close();$("#drawer").classList.add("o")};
+function up(){const p=P.find(x=>x.id=="permit");dlg.innerHTML=`<button class="x" aria-label="Close" onclick="dlg.close();$('#drawer').classList.add('o')">×</button><span class="tag">Rock added to cart ✓</span><h3>Your rock needs somewhere to park</h3><div class="art" style="background:${BG.permit}" aria-hidden="true">${art("permit")}</div><p>The <b>Desk Rock Parking Pass</b> is a joke novelty pass for your rock: a printable certificate (PDF) with a name on it, saying your rock is allowed to sit on your desk. It is not a real or official document. ${rs(p.pr)}, digital.</p><label for="uf">What’s your rock called?</label><input id="uf" maxlength="60" placeholder="Name to print on the pass"><p id="ue" class="note" hidden></p><button class="btn" id="ua">YES, GIVE MY ROCK A PASS</button> <button class="btn w2" id="un">NO, LET IT RISK A TICKET</button>`;
+$("#ua").onclick=()=>{const v=$("#uf").value.trim();if(!v){$("#ue").hidden=false;$("#ue").textContent="Give the rock a name first. Parking passes need names.";return}cart.push({id:"permit",c:[v]});save();draw();dlg.close();$("#drawer").classList.add("o")};
 $("#un").onclick=()=>{dlg.close();$("#drawer").classList.add("o")}}
 // cart
 function draw(){$("#cn").textContent=cart.length;const sub=cart.reduce((s,c)=>s+P.find(p=>p.id==c.id).pr,0),ship=cart.some(c=>c.id=="rock")?CONFIG.SHIPPING:0;
@@ -199,7 +193,7 @@ if(!CONFIG.CHECKOUT_URL){m.textContent="Checkout isn’t connected yet. No payme
 m.textContent="Contacting the server…";try{const r=await fetch(CONFIG.CHECKOUT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({items:cart})});if(!r.ok)throw 0;const d=await r.json();if(!d.url)throw 0;location.href=d.url}catch(e){m.textContent="Couldn’t start checkout. Nothing was charged. Try again or email booleean.shop@gmail.com."}};
 draw();
 // reviews
-const demo=[["Bought a rock. Finally, someone in my life who doesn’t argue."],["Best financial mistake of my week."],["Showed my group chat the peace treaty. They still haven’t signed it."]];
+const demo=[];
 E("#rvl",demo.map(d=>`<figure class="rv"><span class="tag">Demo content</span><p style="margin-top:8px">★★★★★ “${d[0]}”</p></figure>`).join(""));
 async function sb(path,opt){return fetch(CONFIG.SUPABASE_URL+"/rest/v1/"+path,{...opt,headers:{apikey:CONFIG.SUPABASE_ANON_KEY,...(CONFIG.SUPABASE_ANON_KEY.startsWith("eyJ")?{Authorization:"Bearer "+CONFIG.SUPABASE_ANON_KEY}:{}),"Content-Type":"application/json",...(opt&&opt.headers)}})}
 (async()=>{if(!CONFIG.SUPABASE_ANON_KEY)return;try{const r=await sb("reviews?status=eq.approved&order=created_at.desc&limit=12&select=stars,body,product_id,created_at,verified");const d=await r.json();if(d.length)E("#rvl",d.map(v=>`<figure class="rv"><p>${"★".repeat(v.stars)} <small>${esc(P.find(p=>p.id==v.product_id)?.n||"")}</small></p><p>“${esc(v.body)}”</p><small>${v.verified?"Verified purchase · ":""}${new Date(v.created_at).toLocaleDateString("en-IN")}</small></figure>`).join(""))}catch(e){}})();
