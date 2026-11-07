@@ -42,3 +42,4 @@ Keep the `CNAME` file in the repository root if you use a custom domain. Never p
 | `.gitignore` | Tells git which files to never upload |
 
 Sample products and placeholder artwork only. BOOLEEAN is not a registered trademark.
+
