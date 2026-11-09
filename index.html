@@ -146,7 +146,7 @@ nav a.lb{background:#fff;color:var(--k);border-radius:999px;padding:6px 14px}
 
 <script>
 /* ===== CONFIG: fill these in. The anon key is public by design; NEVER put a service-role or payment secret key here. ===== */
-const CONFIG={SUPABASE_URL:"https://ttaqayskweukbkvxoqds.supabase.co",SUPABASE_ANON_KEY:"sb_publishable_UEfCsepDNdjpgx5TDd-9ew_soricS9Y",CHECKOUT_URL:"" /* your server endpoint that re-prices the cart and creates the payment order */,SHIPPING:39};
+const CONFIG={SUPABASE_URL:"https://ttaqayskweukbkvxoqds.supabase.co",SUPABASE_ANON_KEY:"sb_publishable_UEfCsepDNdjpgx5TDd-9ew_soricS9Y",CHECKOUT_URL:"https://ttaqayskweukbkvxoqds.supabase.co/functions/v1/checkout" /* your server endpoint that re-prices the cart and creates the payment order */,SHIPPING:39};
 const P=[
 {id:"rock",n:"Emotional Support Rock",t:"Physical",pr:149,d:"Doesn’t judge you. Doesn’t interrupt you. Doesn’t leave you on read. Doesn’t pay rent either.",inc:["One (1) rock","Zero qualifications"],dl:"Shipped to your address in 5–7 days. ₹39 shipping is added at checkout.",cta:"ADOPT YOUR ROCK"},
 {id:"overthinker",n:"Certified Overthinker Pack",t:"Digital",pr:49,d:"Printable certificates, awards and badges for friends who replay a 2019 conversation at 3 AM. Joke novelty items, not official documents.",inc:["Printable certificates","Awards and badges (PDF)"],dl:"Emailed as a download within 24 hours of payment being confirmed.",cta:"CERTIFY MY NONSENSE",f:"Who’s this overthinker, btw?",ph:"Their name, as it should appear on the certificate"},
@@ -188,9 +188,9 @@ E("#ci",cart.length?cart.map((c,i)=>{const p=P.find(x=>x.id==c.id);return `<div 
 E("#ct",cart.length?`<p>Subtotal ${rs(sub)}<br>Shipping ${ship?rs(ship):"₹0 (digital only)"}<br><b>Total ${rs(sub+ship)}</b></p>`:"");$("#co").disabled=!cart.length}
 $("#ci").onclick=e=>{const r=e.target.closest("[data-r]");if(r){cart.splice(+r.dataset.r,1);save();draw()}};
 $("#cb").onclick=()=>$("#drawer").classList.add("o");$("#cx").onclick=()=>$("#drawer").classList.remove("o");
-$("#co").onclick=async()=>{const m=$("#cm");m.hidden=false;
-if(!CONFIG.CHECKOUT_URL){m.textContent="Checkout isn’t connected yet. No payment was taken and no order was created.";return}
-m.textContent="Contacting the server…";try{const r=await fetch(CONFIG.CHECKOUT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({items:cart})});if(!r.ok)throw 0;const d=await r.json();if(!d.url)throw 0;location.href=d.url}catch(e){m.textContent="Couldn’t start checkout. Nothing was charged. Try again or email booleean.shop@gmail.com."}};
+$("#co").onclick=()=>{if(!cart.length)return;save();let li=false;try{li=!!localStorage.getItem("sb-ttaqayskweukbkvxoqds-auth-token")}catch(e){}
+if(li){location.href="checkout.html";return}
+$("#drawer").classList.remove("o");dlg.innerHTML=`<button class="x" aria-label="Close" onclick="dlg.close()">×</button><span class="tag">Quick step</span><h3>Log in to continue</h3><p>Log in or create an account so we can save your order and send your files. Your cart will be waiting for you.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><a class="btn b" id="lgo" href="login.html">LOG IN / SIGN UP</a><button class="btn" onclick="dlg.close()">NOT NOW</button></div>`;dlg.showModal();$("#lgo").onclick=()=>{try{localStorage.setItem("bl_next","1")}catch(e){}}};
 draw();
 // reviews
 const demo=[];
