@@ -20,6 +20,8 @@ const CONFIG={SUPABASE_URL:"https://ttaqayskweukbkvxoqds.supabase.co",SUPABASE_A
 const P={rock00:{n:"Emotional Support Rock",p:149,phys:1},otc01:{n:"Certified Overthinker Pack",p:49},idea99:{n:"99 Stupidly Funny Things to Sell Online",p:99},gct02:{n:"Group Chat Peace Treaty",p:39},rpp03:{n:"Desk Rock Parking Pass (Novelty)",p:79},rc04:{n:"Personalised Roast Certificate",p:59}};
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let cart=[];try{cart=JSON.parse(localStorage.getItem("bl")||"[]")}catch(e){}
+const OLDID={rock:"rock00",overthinker:"otc01",manual:"idea99",treaty:"gct02",permit:"rpp03",roast:"rc04"};/* carts saved before the id change */
+cart=cart.map(c=>c&&OLDID[c.id]?{...c,id:OLDID[c.id]}:c).filter(c=>c&&P[c.id]);
 cart=cart.filter(c=>P[c.id]);
 const sb=supabase.createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_ANON_KEY);
 let session=null,phys=false;
