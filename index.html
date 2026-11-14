@@ -207,16 +207,22 @@ draw();if(location.hash==="#cart")$("#drawer").classList.add("o");
 const demo=[];
 E("#rvl",demo.map(d=>`<figure class="rv"><span class="tag">Demo content</span><p style="margin-top:8px">★★★★★ “${d[0]}”</p></figure>`).join(""));
 async function sb(path,opt){return fetch(CONFIG.SUPABASE_URL+"/rest/v1/"+path,{...opt,headers:{apikey:CONFIG.SUPABASE_ANON_KEY,...(CONFIG.SUPABASE_ANON_KEY.startsWith("eyJ")?{Authorization:"Bearer "+CONFIG.SUPABASE_ANON_KEY}:{}),"Content-Type":"application/json",...(opt&&opt.headers)}})}
-(async()=>{if(!CONFIG.SUPABASE_ANON_KEY)return;try{const r=await sb("public_reviews?order=created_at.desc&limit=12&select=rating,display_name,body,product_id,created_at,verified_purchase");const d=await r.json();if(d.length)E("#rvl",d.map(v=>`<figure class="rv"><p>${"★".repeat(v.rating)} <small>${esc(P.find(p=>p.id==v.product_id)?.n||"")}</small></p><p>“${esc(v.body)}”</p><small>${esc(v.display_name)} · ${v.verified_purchase?"Verified purchase · ":""}${new Date(v.created_at).toLocaleDateString("en-IN")}</small></figure>`).join(""))}catch(e){}})();
+async function loadReviews(){let pub=[],mine=[];
+try{if(CONFIG.SUPABASE_ANON_KEY){const r=await sb("public_reviews?order=created_at.desc&limit=12&select=rating,display_name,body,product_id,created_at,verified_purchase");const d=await r.json();if(Array.isArray(d))pub=d}}catch(e){}
+try{if(sbc){const{data}=await sbc.auth.getSession();const u=data.session&&data.session.user;if(u){const r=await sbc.from("reviews").select("rating,display_name,body,product_id,created_at,verified_purchase").eq("user_id",u.id).eq("status","pending").order("created_at",{ascending:false});if(!r.error)mine=r.data||[]}}}catch(e){}
+const card=v=>`<figure class="rv"><p>${"★".repeat(v.rating)} <small>${esc(P.find(p=>p.id==v.product_id)?.n||"")}</small></p><p>“${esc(v.body)}”</p><small>${esc(v.display_name)} · ${v.verified_purchase?"Verified purchase · ":""}${new Date(v.created_at).toLocaleDateString("en-IN")}</small></figure>`;
+if(pub.length||mine.length)E("#rvl",mine.map(card).join("")+pub.map(card).join(""))}
 const sbc=window.supabase?supabase.createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_ANON_KEY):null;
-$("#rf").onsubmit=async e=>{e.preventDefault();const m=$("#rm");m.hidden=false;
-if(!star){m.textContent="Pick a star rating first. Even one star counts.";return}
-if(!sbc){m.textContent="Reviews aren’t available right now. Please try again later.";return}
+loadReviews();
+$("#rf").onsubmit=async e=>{e.preventDefault();const m=$("#rm");m.hidden=true;const bad=t=>{m.textContent=t;m.hidden=false};
+if(!star){bad("Pick a star rating first. Even one star counts.");return}
+if(!sbc){bad("Reviews aren’t available right now. Please try again later.");return}
+const tx=$("#rt").value.trim();if(tx.length<10){bad("Tell us a bit more. Reviews need at least 10 characters.");return}if(tx.length>1000){bad("That’s a lot of regret. Please keep it under 1000 characters.");return}
 try{const {data}=await sbc.auth.getSession();const u=data.session&&data.session.user;
-if(!u){m.innerHTML='Please <a href="login.html">log in</a> first so we can check your purchase. Then come back and send your regrets.';return}
+if(!u){m.innerHTML='Please <a href="login.html">log in</a> first so we can check your purchase. Then come back and send your regrets.';m.hidden=false;return}
 const r=await sbc.from("reviews").insert({product_id:$("#rp").value,user_id:u.id,display_name:$("#rn").value.trim(),rating:star,body:$("#rt").value.trim()});
-if(r.error){m.textContent=r.error.code==="23505"?"You’ve already reviewed this one. One regret per product.":"That didn’t save. Please try again.";return}
-m.textContent="Received. It will appear once we’ve checked it.";e.target.reset();star=0;paint(0)}catch(x){m.textContent="That didn’t save. Please try again."}};
+if(r.error){bad(r.error.code==="23505"?"You’ve already reviewed this one. One regret per product.":"That didn’t save. Please try again.");return}
+e.target.reset();star=0;paint(0);await loadReviews();$("#rvl").scrollIntoView({behavior:"smooth",block:"center"})}catch(x){bad("That didn’t save. Please try again.")}};
 let star=0;const st=$("#st");st.innerHTML=[1,2,3,4,5].map(n=>`<button type="button" data-s="${n}" aria-label="${n} star${n>1?"s":""}">★</button>`).join("");
 const paint=n=>st.querySelectorAll("button").forEach((b,i)=>b.classList.toggle("on",i<n));
 st.onclick=e=>{const b=e.target.closest("[data-s]");if(b){star=+b.dataset.s;paint(star)}};st.onmouseover=e=>{const b=e.target.closest("[data-s]");if(b)paint(+b.dataset.s)};st.onmouseleave=()=>paint(star);
