@@ -44,6 +44,6 @@ $("#f").onsubmit=async e=>{e.preventDefault();const m=$("#msg");m.hidden=false;
   $("#pay").disabled=true;m.textContent="Taking you to the secure payment page…";
   try{const {data}=await sb.auth.getSession();const tok=data.session&&data.session.access_token;if(!tok)throw 0;
     const r=await fetch(CONFIG.CHECKOUT_URL,{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+tok,"apikey":CONFIG.SUPABASE_ANON_KEY},body:JSON.stringify({items:cart.map(c=>({id:c.id,c:c.c||[]})),customer:cust})});
-    if(!r.ok)throw 0;const d=await r.json();if(!d.url)throw 0;location.href=d.url}
+    if(!r.ok)throw 0;const d=await r.json();if(!d.url)throw 0;try{localStorage.setItem("bl_last",JSON.stringify({t:Date.now(),ids:cart.map(x=>x.id)}))}catch(e){}location.href=d.url}
   catch(x){m.textContent="Couldn’t start the payment. You have not been charged. Try again or email booleean.shop@gmail.com.";$("#pay").disabled=false}};
 </script></body></html>
